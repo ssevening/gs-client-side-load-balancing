@@ -26,6 +26,22 @@ public class SayHelloApplication {
     return greetings.get(randomNum);
   }
 
+
+  @RequestMapping(value = "/ssevening")
+  public String ssevening() {
+    log.info("Access /ssevening");
+
+    List<String> greetings = Arrays.asList("Android developer with WEB ", "Smart", "Cool");
+    Random rand = new Random();
+
+    int randomNum = rand.nextInt(greetings.size());
+    return greetings.get(randomNum);
+  }
+
+
+
+
+
   @RequestMapping(value = "/")
   public String home() {
     log.info("Access /");

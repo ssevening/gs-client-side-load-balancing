@@ -32,6 +32,12 @@ public class UserApplication {
     return String.format("%s, %s!", greeting, name);
   }
 
+  @RequestMapping("/ssevening")
+  public String ssevening(@RequestParam(value="name", defaultValue="Android DEV") String name) {
+    String greeting = this.restTemplate.getForObject("http://say-hello/ssevening", String.class);
+    return String.format("%s, %s!", greeting, name);
+  }
+
   public static void main(String[] args) {
     SpringApplication.run(UserApplication.class, args);
   }
